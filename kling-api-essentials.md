@@ -211,7 +211,39 @@ curl -s 'https://api-singapore.klingai.com/v1/images/generations' \
 - `model_name` ∈ `kling-v1`, `kling-v1-5`, `kling-v2`, `kling-v2-new`, `kling-v2-1`, `kling-v3`.
 - `resolution`: `1k` | `2k`. `n`: 1–9 images. `aspect_ratio`: `16:9`, `9:16`, `1:1`, `4:3`, `3:4`, `3:2`, `2:3`, `21:9`.
 - Poll via `GET /v1/images/generations/{id}` → `data.task_result.images[].url`.
-- `image` (url or base64) + `image_reference` (`subject`/`face`) enables image-to-image.
+
+### 6.1 Image-to-image (restyle a photo into a keyframe)
+
+Add `image` (url or raw base64, no `data:` prefix) to turn text-to-image into
+image-to-image. Two optional knobs shape *what* it borrows from the reference:
+
+- `image_reference`: `"subject"` keeps character/subject features; `"face"`
+  keeps facial appearance (the uploaded image must contain exactly one face).
+- `image_fidelity` (0–1): reference strength — **kling-v1 / kling-v1-5 only**.
+- `human_fidelity` (0–1): face similarity — **kling-v1-5 only**, and only when
+  `image_reference="subject"`.
+- Negative prompts are **not** supported in image-to-image.
+
+**Model support for `image_reference` matters:** `kling-v2-1` (cheapest current
+option at $0.014/image) and `kling-v1-5`/`kling-v1` support `subject`/`face`
+reference. **Kling Image 3.0 / 3.0 Omni / O1 do NOT** use `image_reference` —
+they do multi-reference "subject control" through the Omni endpoint instead:
+
+```bash
+curl -s 'https://api-singapore.klingai.com/v1/images/omni-image' \
+  -H 'Authorization: Bearer $KLING_API_KEY' -H 'Content-Type: application/json' \
+  -d '{
+    "model_name": "kling-v3-omni",
+    "prompt": "Reimagine <<<image_1>>> as an oil painting ...",
+    "image_list": [{"image": "...url-or-base64..."}],
+    "resolution": "1k", "n": 1, "aspect_ratio": "16:9"
+  }'
+```
+
+- Poll via `GET /v1/images/omni-image/{id}` → `data.task_result.images[].url`
+  (or `series_images[]` when `result_type="series"`).
+- Models: `kling-v3-omni`, `kling-image-o1`. Reference images are cited in the
+  prompt as `<<<image_N>>>` (1-indexed). Supports up to 10 images+elements.
 
 ---
 

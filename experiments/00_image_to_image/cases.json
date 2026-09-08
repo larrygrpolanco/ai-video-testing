@@ -1,0 +1,76 @@
+{
+  "model": "kling-v2-1",
+  "default_settings": {
+    "resolution": "1k",
+    "aspect_ratio": "3:4",
+    "image_reference": "subject",
+    "n": 2
+  },
+  "video_model": "kling-3.0",
+  "default_video_settings": {
+    "resolution": "720p",
+    "duration": 5,
+    "audio": "off",
+    "multi_shot": false
+  },
+  "cases": [
+    {
+      "name": "talon-knight-full-figure",
+      "image": "talon-knight.png",
+      "settings": { "aspect_ratio": "9:16" },
+      "prompt": "Dark fantasy character concept sheet, full figure, the Talon Knight: weather-beaten plate and ragged cloth, a heavy hooked war-hammer slung over one shoulder, one forearm wrapped in a shield-gauntlet of scarred iron and brass, a tall crested helm, a hunting bird perched on the raised gauntlet. Standing on a windswept moor under an overcast sky, distant crags. Painterly oil illustration, cinematic rim light, muted earth tones with a single crimson sash, intricate but grounded detail.",
+      "video_prompt": "Slow push-in as wind moves the ragged cloth and the hunting bird ruffles its feathers, overcast light shifting"
+    },
+    {
+      "name": "talon-knight-woodcut",
+      "image": "talon-knight.png",
+      "prompt": "Medieval woodcut engraving of the Talon Knight, bold crosshatched black ink, the knight with hookhammer and shield-gauntlet, a great bird wheeling overhead, esoteric knotwork border, aged parchment texture, sepia wash over black ink, high contrast, tabletop rulebook plate style.",
+      "video_prompt": "The engraved lines gently shimmer and the bird's wings beat slowly, ink bleeding outward as parchment grain drifts"
+    },
+    {
+      "name": "talon-knight-stained-glass",
+      "image": "talon-knight.png",
+      "settings": { "aspect_ratio": "2:3" },
+      "prompt": "Gothic stained-glass window panel of the Talon Knight, thick black lead lines, jewel-toned glass, a spread-winged bird haloed behind the knight's helm, shafts of coloured light, cathedral interior glow, luminous, symmetrical composition.",
+      "video_prompt": "Light moves through the glass so the jewel colours glow and shift, dust motes drifting in the beams"
+    },
+    {
+      "name": "flockbond-vision",
+      "image": "talon-knight.png",
+      "settings": { "aspect_ratio": "16:9" },
+      "prompt": "Surreal double exposure: the Talon Knight's profile dissolving into the eye of a hawk in flight, an aerial view of moorland far below seen through the bird's vision, claw and eye and wing interwoven in a dreamlike loop, ethereal teal and gold light, painterly. The motto made visible — the claw is nothing without the eye, the eye is nothing without the wing.",
+      "video_prompt": "The hawk's eye slowly turns and the landscape below sweeps past as if the camera is soaring, clouds parting"
+    },
+    {
+      "name": "regret-burning",
+      "image": "talon-knight.png",
+      "settings": { "aspect_ratio": "16:9" },
+      "prompt": "The Talon Knight kneeling before a small fire at dusk, feeding a torn banner and folded letters into the flames, embers rising as pale smoke, heavy release on the face, low-key chiaroscuro, painterly, desaturated tones with a warm ember glow on the armour, ash drifting on the wind.",
+      "video_prompt": "The fire flickers and embers spiral upward, the knight's shadow swaying, ash drifting across the frame"
+    },
+    {
+      "name": "old-steed",
+      "image": "talon-knight.png",
+      "settings": { "aspect_ratio": "16:9" },
+      "prompt": "The Talon Knight standing beside an old, scarred warhorse in rain-soaked earth, one gauntleted hand resting on its neck, both weathered by long roads, overcast dawn light, muted palette, painterly realism, gentle dignity.",
+      "video_prompt": "The old steed shifts its weight and exhales steam in the cold dawn, the knight's hand steady on its neck"
+    },
+    {
+      "name": "helm-black-cloth-white-ravens",
+      "image": "talon-knight.png",
+      "prompt": "Close-up still life: the Talon Knight's crested helm resting on a slab of stone, a black cloth draped beneath it, a scattering of coins at its base, pale white ravens gathering in the gloom around it, dark and nurturing and eerie, shallow depth of field, cinematic painterly light.",
+      "video_prompt": "A white raven hops closer and tilts its head, the black cloth stirring faintly, the coins catching the light"
+    },
+    {
+      "name": "veiled-seer",
+      "prompt": "A towering, androgynous figure robed in hanging folds of flesh and long horse-like hair that hide any semblance of a face, blind yet aware of everything within a hex, standing in a dim stone hall, a single word of advice hanging in the air as a ripple of light, ominous yet serene, dark fantasy oil painting, low candlelight.",
+      "video_prompt": "The veiled figure turns slowly, the folds of flesh and hair shifting like a curtain, candle flames bending toward it"
+    },
+    {
+      "name": "loyal-bird-study",
+      "settings": { "aspect_ratio": "16:9" },
+      "prompt": "Natural-history study plate of the Talon Knight's hunting birds: a fisherhawk diving toward water, a cave owl in shadow, a grey raven, a red eagle, a rock falcon, and a bog vulture, arranged like an old bestiary engraving with fine labels, dark fantasy tone, detailed and painterly on aged paper.",
+      "video_prompt": "The engraved birds subtly ruffle and one wing beats as the page texture breathes, ink shifting"
+    }
+  ]
+}

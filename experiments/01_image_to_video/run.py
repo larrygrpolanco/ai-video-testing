@@ -24,7 +24,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 
 from kling import KlingClient, KlingError, VideoSettings, estimate_video_cost  # noqa: E402
-from kling.media import image_input  # noqa: E402
+from kling.media import image_input, url_suffix  # noqa: E402
 
 EXPERIMENT_DIR = Path(__file__).resolve().parent
 CASES_FILE = EXPERIMENT_DIR / "cases.json"
@@ -162,7 +162,7 @@ def main() -> None:
             meta["status"] = "succeeded"
             meta["video_files"] = []
             for i, v in enumerate(videos):
-                ext = Path(v.get("url", "")).suffix or ".mp4"
+                ext = url_suffix(v.get("url", ""), ".mp4")
                 dest = client.download(v["url"], run_dir / f"video{i}{ext}")
                 meta["video_files"].append(dest.name)
                 print(f"   ✓ saved {dest.name}")

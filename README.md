@@ -41,6 +41,8 @@ Config lives in [`pyproject.toml`](pyproject.toml).
 kling/                  shared helpers (client, pricing, media)
 experiments/            one isolated folder per experiment
   01_image_to_video/    reference pictures -> video, prompts saved alongside
+  02_image_to_image/    pictures + style prompt -> "inspiration art" keyframe
+                        (optionally chain into image-to-video with --to-video)
 ```
 
 ## Philosophy

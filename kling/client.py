@@ -178,6 +178,50 @@ class KlingClient:
         }
         return self._post("/v1/images/generations", payload)
 
+    def image_to_image(
+        self,
+        image_url: str,
+        prompt: str,
+        model_name: str = "kling-v2-1",
+        image_reference: str = "subject",
+        image_fidelity: float | None = None,
+        human_fidelity: float | None = None,
+        n: int = 1,
+        resolution: str = "1k",
+        aspect_ratio: str = "16:9",
+        callback_url: str = "",
+        external_task_id: str = "",
+    ) -> dict:
+        """Generate a new image from a reference image + prompt (image-to-image).
+
+        ``image_reference`` controls what the model borrows from the reference
+        image: ``"subject"`` keeps character/subject features, ``"face"`` keeps
+        facial appearance (the uploaded image must contain exactly one face).
+        Pass ``""`` to omit it and treat the image as a loose style reference.
+
+        ``image_fidelity`` / ``human_fidelity`` (0..1) tune reference strength
+        but are only supported by ``kling-v1`` / ``kling-v1-5`` (``human_fidelity``
+        additionally requires ``image_reference="subject"``). Negative prompts are
+        not supported in image-to-image.
+        """
+        payload: dict[str, Any] = {
+            "model_name": model_name,
+            "prompt": prompt,
+            "image": image_url,
+            "n": n,
+            "resolution": resolution,
+            "aspect_ratio": aspect_ratio,
+            "external_task_id": external_task_id,
+            "callback_url": callback_url,
+        }
+        if image_reference:
+            payload["image_reference"] = image_reference
+        if image_fidelity is not None:
+            payload["image_fidelity"] = image_fidelity
+        if human_fidelity is not None:
+            payload["human_fidelity"] = human_fidelity
+        return self._post("/v1/images/generations", payload)
+
     def get_image_task(self, task_id: str) -> dict:
         return self._get(f"/v1/images/generations/{task_id}").get("data", {})
 

@@ -6,21 +6,14 @@
     "audio": "off",
     "multi_shot": false
   },
-  "cases": [
-    {
-      "name": "mountain-lake-calm-drift",
-      "image": "assets/mountain-lake.png",
-      "prompt": "Slow aerial drift forward over the lake, gentle ripples, soft morning light"
-    },
-    {
-      "name": "mountain-lake-lateral-pan",
-      "image": "assets/mountain-lake.png",
-      "prompt": "Cinematic lateral pan across the scene, clouds moving fast, dramatic lighting"
-    },
-    {
-      "name": "portrait-turn-to-camera",
-      "image": "assets/portrait.jpg",
-      "prompt": "The person slowly turns their head toward the camera and smiles softly"
-    }
-  ]
+  "matrix": {
+    "images": ["talon-knight-and-steed.png", "talon-knight-wood-style.png"],
+    "prompts": [
+      "The Talon Knight kneels slowly in a vast stone hall as the towering Veiled Seer — faceless, its head a curtain of hanging folds of flesh and horse-like hair — leans forward to whisper a single word, a pale white raven on its shoulder, candlelight flickering across black cloth.",
+      "Close-up: the Veiled Seer's curtain of flesh and horse-hair parts as it speaks one word, a faint ripple of light crossing the air toward the Talon Knight, white ravens and scattered coins at their feet, the knight's eyes widening.",
+      "The Talon Knight feeds a torn banner into a brazier of embers, confessing to the blind Veiled Seer as smoke and sparks rise between them, the seer's horse-hair veil drifting in the heat, two white ravens watching from the shadows.",
+      "The Veiled Seer slowly rests a shrouded hand on the Talon Knight's shoulder in a gentle, nurturing gesture, white ravens gathering quietly around the two figures in a candlelit alcove, coins glinting at their feet.",
+      "Wide shot: the Talon Knight stands inside a chalked hexagram as fine threads of pale light stream from the Veiled Seer's hidden face toward the knight, mist and dust drifting, white ravens scattered like coins on the stone floor."
+    ]
+  }
 }
