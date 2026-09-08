@@ -1,0 +1,17 @@
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Ruff
+.ruff_cache/
+
+# Generated experiment outputs
+experiments/*/output/
+
+# OS
+.DS_Store

@@ -1,0 +1,2 @@
+# Development/linting dependencies (not needed at runtime).
+ruff>=0.6

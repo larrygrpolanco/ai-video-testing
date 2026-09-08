@@ -1,0 +1,12 @@
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+extend-exclude = [
+    "experiments/*/output",
+    ".venv",
+]
+
+[tool.ruff.lint]
+# E/W = pycodestyle errors/warnings, F = pyflakes, I = import sorting,
+# UP = pyupgrade, B = flake8-bugbear
+select = ["E", "W", "F", "I", "B", "UP"]

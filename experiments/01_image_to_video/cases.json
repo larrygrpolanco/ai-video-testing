@@ -1,0 +1,26 @@
+{
+  "model": "kling-3.0",
+  "default_settings": {
+    "resolution": "720p",
+    "duration": 5,
+    "audio": "off",
+    "multi_shot": false
+  },
+  "cases": [
+    {
+      "name": "mountain-lake-calm-drift",
+      "image": "assets/mountain-lake.png",
+      "prompt": "Slow aerial drift forward over the lake, gentle ripples, soft morning light"
+    },
+    {
+      "name": "mountain-lake-lateral-pan",
+      "image": "assets/mountain-lake.png",
+      "prompt": "Cinematic lateral pan across the scene, clouds moving fast, dramatic lighting"
+    },
+    {
+      "name": "portrait-turn-to-camera",
+      "image": "assets/portrait.jpg",
+      "prompt": "The person slowly turns their head toward the camera and smiles softly"
+    }
+  ]
+}
